@@ -1,3 +1,13 @@
 {
-  "version": "2026.10.31.8"
+  "version": "2026.10.31.9",
+  "displayVersion": "26.10.9",
+  "build": 2026103109,
+  "date": "31/10/2026",
+  "changes": [
+    "Nuevo formato de versión corto: año, mes y revisión.",
+    "Buscar actualización ahora solo consulta: no descarga ni instala automáticamente.",
+    "La aplicación muestra las novedades y correcciones antes de instalar una versión.",
+    "Actualizar ahora instala directamente cuando tú lo decides, sin segunda confirmación.",
+    "Eliminado el historial de versiones anteriores del centro de actualizaciones."
+  ]
 }
