@@ -1,1 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="110" height="90" viewBox="0 0 110 90"><defs><linearGradient id="r" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fa3847"/><stop offset="1" stop-color="#9c0822"/></linearGradient></defs><path d="M13 54C20 12 49 0 69 9 91 16 86 39 96 43L80 54C78 37 62 28 48 35L34 65Z" fill="url(#r)" stroke="#790719" stroke-width="2"/><path d="M17 54Q50 44 83 60L79 73Q44 57 12 70Z" fill="#fffdf2" stroke="#d5d5d5" stroke-width="2"/><circle cx="93" cy="50" r="12" fill="#fffdf5" stroke="#d8d8d8" stroke-width="2"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="140" viewBox="0 0 180 140" role="img" aria-label="Gorro navideño completo">
+<defs><linearGradient id="fabric" x1=".15" y1="0" x2=".8" y2="1"><stop stop-color="#ff5260"/><stop offset=".48" stop-color="#df152e"/><stop offset="1" stop-color="#8e0820"/></linearGradient><linearGradient id="fur" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#d9e0df"/></linearGradient></defs>
+<path d="M20 100C35 67 47 30 85 16C110 6 138 22 145 50C148 65 152 75 163 79" fill="url(#fabric)" stroke="#970b21" stroke-width="3" stroke-linejoin="round"/>
+<path d="M83 18C111 10 140 22 145 52" fill="none" stroke="#ff8790" stroke-width="5" stroke-linecap="round" opacity=".8"/>
+<path d="M25 94C65 77 103 82 137 105L127 122C91 100 56 98 17 116Z" fill="url(#fur)" stroke="#bac4c2" stroke-width="2.5" stroke-linejoin="round"/>
+<path d="M28 102C63 88 99 91 130 110" fill="none" stroke="#fff" stroke-width="4" opacity=".85" stroke-linecap="round"/>
+<circle cx="157" cy="83" r="17" fill="url(#fur)" stroke="#c7d0ce" stroke-width="2.5"/>
+<circle cx="151" cy="77" r="6" fill="#fff" opacity=".8"/>
+</svg>
