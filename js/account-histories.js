@@ -44,13 +44,12 @@ function ibecoAccountPage(kind) {
   const rows = entries.map(({ entry }) => {
     const delta = ibecoAccountDelta(kind, entry);
     running += delta;
-    const incoming = delta > 0;
-    const outgoing = delta < 0;
-    return `<button type="button" class="ibeco-history-entry" onclick="receipt('${entry.id}')" aria-label="Ver comprobante ${esc(names[entry.type])} del ${esc(entry.date)}">
-      <span class="ibeco-history-when">${esc(entry.date)}</span>
-      <span class="ibeco-history-what"><strong>${esc(names[entry.type])}${entry.void ? ' · ANULADO' : ''}</strong><small>${esc(ibecoAccountDetail(entry))}</small></span>
-      <span class="ibeco-history-in">${incoming ? '+' + money(delta) : '—'}</span>
-      <span class="ibeco-history-out">${outgoing ? '−' + money(-delta) : '—'}</span>
+    const credit = delta > 0;
+    const shownAmount = entry.void ? 'Anulado' : (credit ? '+' : '−') + money(Math.abs(delta));
+    return `<button type="button" class="ibeco-history-entry${entry.void ? ' cancelled' : ''}" onclick="receipt('${entry.id}')" aria-label="Ver comprobante ${esc(names[entry.type])} del ${esc(entry.date)}">
+      <span class="ibeco-history-dot ${credit ? 'positive' : 'negative'}" aria-hidden="true"></span>
+      <span class="ibeco-history-what"><small>${esc(entry.date)}</small><strong>${esc(names[entry.type])}${entry.void ? ' · ANULADO' : ''}</strong><small>${esc(ibecoAccountDetail(entry))}</small></span>
+      <span class="ibeco-history-amount ${entry.void ? '' : credit ? 'positive' : 'negative'}">${shownAmount}</span>
       <strong class="ibeco-history-balance">${money(running)}</strong>
     </button>`;
   }).join('');
@@ -67,7 +66,7 @@ function ibecoAccountPage(kind) {
       <h2>${isDebt ? 'Historial de deuda' : 'Historial de cartera'}</h2>
       <p class="hint">Toca cualquier movimiento para abrir su comprobante. Los anulados permanecen visibles sin alterar el saldo.</p>
       <div class="ibeco-history-scroll" role="region" aria-label="${title} — movimientos" tabindex="0">
-        <div class="ibeco-history-head"><span>Fecha</span><span>Movimiento / detalle</span><span>Entrada</span><span>Salida</span><span>Saldo</span></div>
+        <div class="ibeco-history-head"><span>Movimiento</span><span>Importe</span><span>Saldo</span></div>
         ${rows || '<div class="empty">Todavía no hay movimientos en este historial.</div>'}
       </div>
     </section>`;
