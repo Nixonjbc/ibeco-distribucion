@@ -1,9 +1,10 @@
 // IBECO version updater. No writes to the financial ledger or localStorage.
 (() => {
-  const CURRENT_VERSION = '2026.10.31.7';
+  const CURRENT_VERSION = '2026.10.31.8';
   const SITE_ROOT = new URL('../', document.currentScript.src);
   const manifestURL = new URL('version.json', SITE_ROOT);
   const previousRender = render;
+  let availableVersion = null;
   const today = new Date();
   const holiday = today.getMonth() === 11 || (today.getMonth() === 0 && today.getDate() <= 6) || (today.getMonth() === 9 && today.getDate() >= 31) || today.getMonth() === 10;
   document.body.classList.toggle('ibeco-holiday', holiday);
@@ -12,7 +13,7 @@
     return `<section class="panel ibeco-updater">
       <h2>Actualizar versión</h2>
       <p>Versión instalada: <strong>${CURRENT_VERSION}</strong></p>
-      <button type="button" class="primary" onclick="ibecoCheckForUpdates()">↻ Buscar y descargar actualización</button><button type="button" onclick="ibecoForceRefresh()">Recargar versión</button>
+      <button type="button" class="primary" onclick="ibecoCheckForUpdates()">↻ Buscar actualización</button><button type="button" onclick="ibecoForceRefresh()">Recargar versión</button>
       <p class="hint" id="ibeco-version-status" role="status">Comprobará si hay una versión nueva sin borrar tus registros.</p>
     </section>`;
   }
@@ -28,6 +29,7 @@
   window.ibecoCheckForUpdates = async function () {
     const status = document.getElementById('ibeco-version-status');
     const button = document.querySelector('.ibeco-updater button');
+    availableVersion = null;
     if (button) button.disabled = true;
     if (status) status.textContent = 'Consultando la última versión…';
     try {
@@ -47,12 +49,8 @@
         if (status) status.textContent = 'Esta instalación ya es más reciente que la publicada.';
         return;
       }
-      if (status) status.textContent = 'Versión ' + latest + ' disponible. Recargando sin borrar tus datos…';
-      const next = new URL('index.html', SITE_ROOT);
-      next.searchParams.set('v', latest);
-      next.searchParams.set('fresh', String(Date.now()));
-      // Same origin and scope: installed iPhone icon and its localStorage remain unchanged.
-      window.location.replace(next.href);
+      availableVersion = latest;
+      if (status) status.textContent = 'Nueva versión ' + latest + ' disponible. Pulsa «Recargar versión» cuando quieras instalarla.';
     } catch (error) {
       if (status) status.textContent = 'No fue posible comprobar la actualización. Revisa tu conexión e inténtalo de nuevo.';
     } finally {
@@ -62,6 +60,7 @@
 
   window.ibecoForceRefresh = function () {
     const next = new URL('index.html', SITE_ROOT);
+    if (availableVersion) next.searchParams.set('v', availableVersion);
     next.searchParams.set('fresh', String(Date.now()));
     window.location.replace(next.href);
   };
