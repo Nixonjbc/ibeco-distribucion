@@ -83,3 +83,21 @@ body.ibeco-festive .product-open:hover,body.ibeco-festive .client-card:hover{bor
   body.ibeco-festive nav button.active{background:linear-gradient(180deg,#06351b,#02170a);border-radius:15px 15px 8px 8px}
 }
 @media(prefers-reduced-motion:reduce){body.ibeco-festive *{scroll-behavior:auto!important}}
+
+/* Full Santa hat: keep brim, red fabric and pom-pom visible on small screens. */
+body.ibeco-festive .home-brand{overflow:visible!important}
+body.ibeco-festive .home-brand:after{
+  width:108px!important;height:86px!important;
+  left:calc(50% + 29px)!important;top:-2px!important;
+  background-image:url('./assets/santa-hat.svg?v=2')!important;
+  background-size:contain!important;background-repeat:no-repeat!important;
+  background-position:center!important;
+  transform:rotate(-10deg)!important;filter:drop-shadow(0 4px 8px #0009)!important;
+  clip-path:none!important;
+}
+@media(max-width:760px){
+  body.ibeco-festive .home-brand:after{
+    width:86px!important;height:77px!important;
+    left:calc(50% + 34px)!important;top:4px!important;
+  }
+}
