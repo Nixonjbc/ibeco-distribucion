@@ -1,6 +1,6 @@
 // IBECO version updater. No writes to the financial ledger or localStorage.
 (() => {
-  const CURRENT_VERSION = '2026.10.31.6';
+  const CURRENT_VERSION = '2026.10.31.7';
   const SITE_ROOT = new URL('../', document.currentScript.src);
   const manifestURL = new URL('version.json', SITE_ROOT);
   const previousRender = render;
