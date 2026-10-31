@@ -8,6 +8,6 @@
     "Buscar actualización ahora solo consulta: no descarga ni instala automáticamente.",
     "La aplicación muestra las novedades y correcciones antes de instalar una versión.",
     "Actualizar ahora instala directamente cuando tú lo decides, sin segunda confirmación.",
-    "Eliminado el historial de versiones anteriores del centro de actualizaciones."
+    "El panel muestra únicamente la actualización disponible; no incluye historial de versiones anteriores."
   ]
 }
