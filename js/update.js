@@ -1,6 +1,6 @@
 // IBECO version updater. No writes to the financial ledger or localStorage.
 (() => {
-  const CURRENT_VERSION = '2026.10.31.5';
+  const CURRENT_VERSION = '2026.10.31.6';
   const SITE_ROOT = new URL('../', document.currentScript.src);
   const manifestURL = new URL('version.json', SITE_ROOT);
   const previousRender = render;
@@ -12,7 +12,7 @@
     return `<section class="panel ibeco-updater">
       <h2>Actualizar versión</h2>
       <p>Versión instalada: <strong>${CURRENT_VERSION}</strong></p>
-      <button type="button" class="primary" onclick="ibecoCheckForUpdates()">↻ Buscar y descargar actualización</button>
+      <button type="button" class="primary" onclick="ibecoCheckForUpdates()">↻ Buscar y descargar actualización</button><button type="button" onclick="ibecoForceRefresh()">Recargar versión</button>
       <p class="hint" id="ibeco-version-status" role="status">Comprobará si hay una versión nueva sin borrar tus registros.</p>
     </section>`;
   }
@@ -39,7 +39,7 @@
       const latest = String(manifest.version || '');
       if (!/^\d{4}\.\d{2}\.\d{2}\.\d+$/.test(latest)) throw Error('Versión del servidor inválida.');
       if (latest === CURRENT_VERSION) {
-        if (status) status.textContent = 'Ya tienes la última versión (' + latest + ').';
+        if (status) status.textContent = 'Ya tienes la última versión (' + latest + '). Si no ves los cambios, pulsa Recargar versión.';
         return;
       }
       const cmp = (a,b) => a.split('.').map(Number).reduce((n,v,i) => n || v - Number(b.split('.')[i]),0);
@@ -58,6 +58,12 @@
     } finally {
       if (button) button.disabled = false;
     }
+  };
+
+  window.ibecoForceRefresh = function () {
+    const next = new URL('index.html', SITE_ROOT);
+    next.searchParams.set('fresh', String(Date.now()));
+    window.location.replace(next.href);
   };
 
   render();
