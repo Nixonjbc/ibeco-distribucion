@@ -1,0 +1,85 @@
+/* IBECO Christmas design — visual-only. Never touches ledger or browser storage. */
+:root{--christmas-green:#2dff66;--christmas-edge:#36f679}
+body.ibeco-festive{background:#020c07;color:#f4fff7}
+body.ibeco-festive main{position:relative;isolation:isolate}
+body.ibeco-festive main:before{
+  background:linear-gradient(180deg,#032415aa,#02130800),url('./assets/christmas-wave.svg') top center/100% 100% no-repeat!important;
+}
+body.ibeco-festive main:after{
+  content:"";position:absolute;top:0;left:0;right:0;height:145px;
+  background:url('./assets/christmas-garland.svg') top center/100% 145px no-repeat;
+  z-index:2;pointer-events:none;
+}
+body.ibeco-festive main>header,body.ibeco-festive main>#content{position:relative;z-index:1}
+body.ibeco-festive header{background:transparent}
+body.ibeco-festive header h1{color:#f5fff9;text-shadow:0 2px 16px #13ff6422}
+body.ibeco-festive header h1:after{
+  content:"";display:block;height:3px;width:58px;margin:12px auto 0;
+  border-radius:40px;background:linear-gradient(90deg,#2cff66,#b7f2ac,#2cff66);
+  box-shadow:0 0 9px #36ff77aa;
+}
+body.ibeco-festive .home-brand{
+  isolation:isolate;overflow:visible;
+  background:radial-gradient(ellipse at 50% 56%,#0f732d55 0,transparent 71%);
+  border-radius:30px;
+}
+body.ibeco-festive .home-brand:before{
+ content:"";position:absolute;inset:0;pointer-events:none;
+ background:url('./assets/christmas-wave.svg') center top/100% 100% no-repeat;
+ opacity:.65;border-radius:28px;
+}
+body.ibeco-festive .home-brand:after{
+ content:"";position:absolute;z-index:3;pointer-events:none;
+ width:71px;height:60px;left:calc(50% + 25px);top:12px;
+ background:url('./assets/santa-hat.svg') center/contain no-repeat;
+ transform:rotate(-12deg);filter:drop-shadow(0 3px 6px #000a);
+ border:0;opacity:1;
+}
+body.ibeco-festive .home-brand img{position:relative;z-index:2;filter:drop-shadow(0 0 14px #2eff6555)}
+body.ibeco-festive .home-total,body.ibeco-festive .account-card,body.ibeco-festive .product-card{
+  border:1px solid #1cf365!important;
+  box-shadow:inset 0 1px 0 #77ffa84a,0 0 13px #22e96931,0 8px 25px #0005;
+}
+body.ibeco-festive .home-total{background:linear-gradient(120deg,#06421f,#06170f 70%)}
+body.ibeco-festive .panel,body.ibeco-festive .client-card,body.ibeco-festive .product-card,
+body.ibeco-festive .stock-entry,body.ibeco-festive .ledger-row{
+  background-color:#071810;
+}
+body.ibeco-festive .client-card,body.ibeco-festive .product-card{
+  border-color:#246940;box-shadow:0 2px 15px #0006,inset 0 1px #44f58020;
+}
+body.ibeco-festive .primary,body.ibeco-festive .home-search button,
+body.ibeco-festive .client-toolbar button.primary{
+  background:linear-gradient(180deg,#92ff8d 0%,#3bfa64 52%,#04cb39 100%)!important;
+  color:#07290f!important;border:1px solid #9dffb3!important;
+  box-shadow:inset 0 2px 1px #f4ffaf80,0 0 14px #17f75344!important;
+}
+body.ibeco-festive input,body.ibeco-festive .styled-select,body.ibeco-festive textarea{
+  background:linear-gradient(180deg,#101c1b,#0b151b);border-color:#345c52;
+}
+body.ibeco-festive nav{background:linear-gradient(180deg,#07160e,#000b07)}
+body.ibeco-festive nav button.active{color:#49ff83;border-bottom:2px solid #4fff78;box-shadow:0 0 12px #18ea4233}
+body.ibeco-festive .account-card.debt-card{border-color:#f9c452!important;background:linear-gradient(120deg,#493209,#10150b 80%)}
+body.ibeco-festive .account-card.cash-card{background:linear-gradient(120deg,#07542a,#061c11 78%)}
+body.ibeco-festive .account-actions .primary{box-shadow:0 0 16px #20ff6255}
+body.ibeco-festive .ibeco-history-panel,body.ibeco-festive .ibeco-history-summary{
+  border-color:#39ed6d;box-shadow:0 0 15px #1deb6b3d;
+}
+body.ibeco-festive .home-screen .panel{background:#041109}
+body.ibeco-festive .product-open:hover,body.ibeco-festive .client-card:hover{border-color:#39ff75}
+@media(max-width:760px){
+  body.ibeco-festive main:after{height:120px;background-size:100% 120px}
+  body.ibeco-festive main:before{height:125px!important;background-size:100% 125px!important}
+  body.ibeco-festive.home-screen main:before{height:150px!important;background-size:100% 150px!important}
+  body.ibeco-festive .home-brand{height:150px}
+  body.ibeco-festive .home-brand:after{width:64px;height:60px;left:calc(50% + 32px);top:17px}
+  body.ibeco-festive .home-brand img{width:215px;height:104px}
+  body.ibeco-festive header{min-height:104px;height:104px;padding-top:28px}
+  body.ibeco-festive header h1{font-size:23px}
+  body.ibeco-festive .home-total{margin-top:6px}
+  body.ibeco-festive .home-search{gap:10px}
+  body.ibeco-festive aside{background:#031008;border-top:1px solid #15643b;box-shadow:0 -8px 28px #001b0ea3}
+  body.ibeco-festive nav{border-radius:22px 22px 0 0}
+  body.ibeco-festive nav button.active{background:linear-gradient(180deg,#06351b,#02170a);border-radius:15px 15px 8px 8px}
+}
+@media(prefers-reduced-motion:reduce){body.ibeco-festive *{scroll-behavior:auto!important}}
