@@ -4,6 +4,9 @@
   const SITE_ROOT = new URL('../', document.currentScript.src);
   const manifestURL = new URL('version.json', SITE_ROOT);
   const previousRender = render;
+  const today = new Date();
+  const holiday = today.getMonth() === 11 || (today.getMonth() === 0 && today.getDate() <= 6) || (today.getMonth() === 9 && today.getDate() >= 31) || today.getMonth() === 10;
+  document.body.classList.toggle('ibeco-holiday', holiday);
 
   function updateArea() {
     return `<section class="panel ibeco-updater">
