@@ -75,8 +75,45 @@ body{background:#030708}body:before{background:radial-gradient(ellipse at 50% 0,
   .ibeco-history-head,.ibeco-history-entry{grid-template-columns:75px minmax(140px,1fr) 88px 88px 90px;min-width:525px;gap:6px}
 }
 
-/* In-app version check; do not impact inventory or client screens. */
+
+/* IBECO histories: same compact three-column ledger used across the application. */
+.ibeco-history-head{display:grid;grid-template-columns:minmax(0,1fr) 102px 102px;gap:8px;min-width:0;padding:13px 10px;font-size:11px}
+.ibeco-history-head span:not(:first-child){text-align:right}
+.ibeco-history-entry{display:grid;grid-template-columns:9px minmax(0,1fr) 102px 102px;gap:8px;min-width:0;width:100%;align-items:center;padding:13px 10px;border-bottom:1px solid #24392b;background:transparent;text-align:left;color:inherit;font-size:12px}
+.ibeco-history-dot{width:7px;height:7px;border-radius:50%;background:currentColor}
+.ibeco-history-what{display:grid;gap:4px;min-width:0}
+.ibeco-history-what strong{font-size:12px;font-weight:600}
+.ibeco-history-what small{color:#a5b7aa;overflow-wrap:anywhere;font-size:10px}
+.ibeco-history-amount,.ibeco-history-balance{text-align:right;white-space:nowrap;font-size:11px}
+.ibeco-history-scroll{overflow-y:auto;overflow-x:hidden}
+@media(max-width:760px){
+  .ibeco-history-head{grid-template-columns:minmax(0,1fr) 81px 81px;gap:4px;padding:10px 4px}
+  .ibeco-history-entry{grid-template-columns:7px minmax(0,1fr) 81px 81px;gap:4px;padding:13px 4px}
+  .ibeco-history-what strong{font-size:11px}
+  .ibeco-history-amount,.ibeco-history-balance{font-size:10px}
+}
+
+/* December seasonal treatment: accent borders/headings, not ledgers or logos. */
+:root{--ibeco-holiday-gold:#d6ab5e;--ibeco-holiday-red:#a62f3d}
+.home-brand,.home-total,.panel,.account-card,.product-card,.ibeco-history-summary{
+  border-color:#225b3e;
+}
+.home-brand:after{
+  content:"";pointer-events:none;position:absolute;inset:2px 5px;border-radius:26px;
+  border-top:2px solid #dab76d;border-bottom:1px solid #a73540;
+  opacity:.7;
+}
+.home-screen main:before,main:before{
+  background: radial-gradient(ellipse at 16% 6%,#a42c3333,transparent 45%), radial-gradient(ellipse at 85% 16%,#d8b15e22,transparent 46%), linear-gradient(140deg,#09291b,#04110b 75%);
+}
+.panel{box-shadow:inset 0 1px 0 #bd994d22,0 1px 6px #0003}
+.account-card,.ibeco-history-summary{box-shadow:inset 0 2px 0 #c9a66355}
+header h1{position:relative;text-shadow:0 1px 0 #d3ac6030}
+header h1:after{content:"";display:block;width:52px;height:2px;border-radius:2px;background:linear-gradient(90deg,#b23441,#daa952,#31c66e);margin:7px auto 0}
+nav button.active{border-bottom:2px solid #b99455}
+@media(prefers-reduced-motion:reduce){.ibeco-history-entry{scroll-behavior:auto}}
+
+/* In-app version check; Settings only. */
 .ibeco-updater{margin-top:18px}
 .ibeco-updater button{width:100%;margin:12px 0}
 .ibeco-updater .hint{min-height:18px}
-.ibeco-update-shortcut{width:100%;margin:12px 0;background:linear-gradient(120deg,#11361f,#0d2319);border:1px solid #2a7b46;color:#c7f8d7}
