@@ -1,24 +1,12 @@
-<!doctype html>
-<html lang="es">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#08120d">
-<title>IBECO Distribuciones — Preparación</title>
-<style>
-:root{font-family:system-ui,-apple-system,Segoe UI,sans-serif;color-scheme:dark}
-body{margin:0;min-height:100svh;background:#08120d;color:#e8f7ed;display:grid;place-items:center;padding:22px;box-sizing:border-box}
-main{max-width:490px;width:100%;border:1px solid #28563b;border-radius:22px;background:#0f2118;padding:28px;box-sizing:border-box}
-small{color:#89caa3;letter-spacing:.16em;font-weight:700}
-h1{margin:10px 0 8px;font-size:clamp(27px,7vw,40px)}
-p{line-height:1.6;color:#c9dbd0} .tag{display:inline-block;margin-top:16px;padding:9px 14px;border-radius:999px;background:#174a2b;color:#b4edc7;font-size:13px}
-footer{margin-top:26px;font-size:12px;color:#98afa1}
-</style>
-</head>
-<body><main>
-<small>IBECO · DISTRIBUCIÓN</small>
-<h1>Nuevo acceso en preparación</h1>
-<p>La publicación independiente de IBECO se está preparando. Esta pantalla es únicamente una prueba técnica de GitHub Pages: <strong>todavía no es la aplicación de inventario</strong>.</p>
-<p>Por ahora, sigue utilizando la aplicación original. No elimines el acceso actual ni borres los respaldos.</p>
-<span class="tag">Versión inicial · Sin datos privados</span>
-<footer>IBECO Distribuciones — página de preparación</footer>
-</main></body></html>
+<!DOCTYPE html>
+
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#080c0b"><title>IBECO · Distribución</title><link rel="stylesheet" href="./style.css"></head>
+<body class="home-screen" data-page="home"><aside><img src="./assets/logo.png" alt="IBECO 24 Hrs"><small>CONTROL DE DISTRIBUCIÓN</small><nav id="nav"><button class="active" onclick="page='home';selected=null;query='';filter='';render()"><b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 9-8 9 8v10h-6v-7H9v7H3z"></path></svg></b><span>Inicio</span></button><button class="" onclick="page='clients';selected=null;query='';filter='';render()"><b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="7" r="4"></circle><path d="M2 21v-3a7 7 0 0 1 14 0v3M17 4a4 4 0 0 1 0 8m2 3a6 6 0 0 1 3 6"></path></svg></b><span>Clientes</span></button><button class="" onclick="page='movements';selected=null;query='';filter='';render()"><b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="3"></rect><path d="M9 8h6m-6 4h6m-6 4h4"></path></svg></b><span>Movimientos</span></button><button class="" onclick="page='stock';selected=null;query='';filter='';render()"><b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 10 5v10l-10 5-10-5V7zM2 7l10 5 10-5m-10 5v10M7 4.5l10 5"></path></svg></b><span>Stock</span></button><button class="" onclick="page='supplier';selected=null;query='';filter='';render()"><b><img class="nav-logo" src="./assets/logo.png" alt=""></b><span>Ibeco</span></button></nav><footer><span class="dot"></span> Tu negocio, en orden<br><button onclick="page='settings';render()">⚙ Configuración</button></footer></aside><main><header><div><small>MI ESPACIO DE TRABAJO</small><h1 id="title">Tu distribución, al día</h1></div><span id="today"></span></header><div id="content"><section class="home-brand"><span class="flare f1"></span><span class="flare f2"></span><span class="flare f3"></span><img src="./assets/logo.png" alt="IBECO 24 Hrs"></section><section class="hero home-total"><div class="home-people"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="7" r="4"></circle><path d="M2 21v-3a7 7 0 0 1 14 0v3M17 4a4 4 0 0 1 0 8m2 3a6 6 0 0 1 3 6"></path></svg></div><label>Total por cobrar</label><div class="amount">USD&nbsp;0,00</div></section><div class="home-search"><input id="home-search" placeholder="Buscar cliente…" aria-label="Buscar cliente" value="" oninput="query=this.value;homeClients()"><button onclick="clientForm()">＋ Nuevo cliente</button></div><section class="panel"><h2>Clientes con deuda</h2><div id="home-clients"><div class="empty">Todavía no hay clientes.<br>Agrega el primero para comenzar.</div></div></section><button onclick="page='settings';render()">⚙ Configuración</button></div></main><dialog id="modal"></dialog><div id="toast" role="status"></div><script src="./js/engine.js"></script>
+<script src="./js/app.js"></script>
+<script src="./js/refine.js"></script>
+<script src="./js/stock.js"></script>
+<script src="./js/polish.js"></script>
+<script src="./js/curves.js"></script>
+<script src="./js/fidelity.js"></script>
+<script src="./js/backup.js"></script>
+</body></html>
