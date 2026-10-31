@@ -1,15 +1,15 @@
 // IBECO version updater. No writes to the financial ledger or localStorage.
 (() => {
-  const CURRENT_VERSION = '2026.10.31.4';
+  const CURRENT_VERSION = '2026.10.31.5';
   const SITE_ROOT = new URL('../', document.currentScript.src);
   const manifestURL = new URL('version.json', SITE_ROOT);
   const previousRender = render;
 
   function updateArea() {
     return `<section class="panel ibeco-updater">
-      <h2>Actualizaciones</h2>
+      <h2>Actualizar versión</h2>
       <p>Versión instalada: <strong>${CURRENT_VERSION}</strong></p>
-      <button type="button" class="primary" onclick="ibecoCheckForUpdates()">↻ Actualizar versión</button>
+      <button type="button" class="primary" onclick="ibecoCheckForUpdates()">↻ Buscar y descargar actualización</button>
       <p class="hint" id="ibeco-version-status" role="status">Comprobará si hay una versión nueva sin borrar tus registros.</p>
     </section>`;
   }
@@ -19,11 +19,7 @@
     if (page === 'settings') {
       document.querySelector('#content')?.insertAdjacentHTML('beforeend', updateArea());
     }
-    if (page === 'home') {
-      const settingsButton = [...document.querySelectorAll('#content button')].find(el => el.textContent.includes('Configuración'));
-      if (settingsButton) settingsButton.insertAdjacentHTML('beforebegin', `<button type="button" class="ibeco-update-shortcut" onclick="page='settings';render()">↻ Actualizar versión</button>`);
-      else document.querySelector('#content')?.insertAdjacentHTML('beforeend', `<button type="button" class="ibeco-update-shortcut" onclick="page='settings';render()">↻ Actualizar versión</button>`);
-    }
+
   };
 
   window.ibecoCheckForUpdates = async function () {
