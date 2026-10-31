@@ -1,7 +1,7 @@
 // IBECO update center. No financial-data or localStorage writes.
 (() => {
-  const DISPLAY_VERSION = '26.10.9';
-  const BUILD = 2026103109;
+  const DISPLAY_VERSION = '26.10.10';
+  const BUILD = 2026103110;
   const SITE_ROOT = new URL('../', document.currentScript.src);
   const manifestURL = new URL('version.json', SITE_ROOT);
   const previousRender = render;
