@@ -18,7 +18,7 @@
     const card=target.closest(cardSelector);
     // Las tarjetas son zonas de toque Y deslizamiento; los otros botones no.
     const control=target.closest(controls);
-    if(control && (!card || (control!==card && !card.contains(control))))return false;
+    if(control && control!==card)return false;
     if(target.closest('dialog,.custom-picker,nav,aside'))return false;
     return !horizontalScrollArea(target);
   }
