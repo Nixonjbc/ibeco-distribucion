@@ -46,3 +46,31 @@ body{background:#030708}body:before{background:radial-gradient(ellipse at 50% 0,
     margin-bottom: 12px;
   }
 }
+
+/* IBECO: two separate account histories, no full-page expanding ledger. */
+.ibeco-history-link{position:relative;cursor:pointer;padding-right:34px}
+.ibeco-history-link:focus-visible{outline:2px solid #6dfa93;outline-offset:3px}
+.ibeco-card-chevron{position:absolute;right:12px;top:50%;transform:translateY(-50%);font-size:28px;color:#bafbc9}
+.ibeco-back{margin:4px 0 14px}
+.ibeco-history-summary{padding:21px;border-radius:19px;border:1px solid #1a7040;background:linear-gradient(110deg,#064923,#0a1e14)}
+.ibeco-history-summary.ibeco-debt{background:linear-gradient(110deg,#38270b,#15150c);border-color:#806323}
+.ibeco-history-summary small{font-size:11px;color:#d9e9dc}
+.ibeco-history-total{font-size:clamp(30px,7vw,42px);font-weight:800;margin:6px 0}
+.ibeco-history-summary p{color:#bdd1c3;font-size:12px;margin:5px 0 0}
+.ibeco-history-panel{margin-top:16px}
+.ibeco-history-scroll{max-height:min(60dvh,660px);min-height:160px;overflow-y:auto;overflow-x:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;touch-action:pan-y}
+.ibeco-history-head,.ibeco-history-entry{display:grid;grid-template-columns:85px minmax(145px,1fr) 95px 95px 100px;align-items:center;gap:9px;min-width:550px}
+.ibeco-history-head{position:sticky;top:0;z-index:2;background:#14231b;color:#b8d4c1;font-size:11px;font-weight:700;padding:12px 8px}
+.ibeco-history-entry{width:100%;text-align:left;background:transparent;color:#ebf8ed;border:0;border-bottom:1px solid #2b4235;border-radius:0;padding:12px 8px;font-size:12px}
+.ibeco-history-entry:hover,.ibeco-history-entry:focus-visible{background:#123622}
+.ibeco-history-what{min-width:0;display:grid;gap:4px}
+.ibeco-history-what small{font-size:11px;color:#9aafa1;overflow-wrap:anywhere}
+.ibeco-history-when{font-size:11px;color:#a8bbae}
+.ibeco-history-in{color:#63f58f;text-align:right}
+.ibeco-history-out{color:#ff8a8a;text-align:right}
+.ibeco-history-balance{text-align:right;white-space:nowrap}
+@media(max-width:760px){
+  .ibeco-history-panel{padding:15px 10px}
+  .ibeco-history-scroll{max-height:min(55dvh,560px)}
+  .ibeco-history-head,.ibeco-history-entry{grid-template-columns:75px minmax(140px,1fr) 88px 88px 90px;min-width:525px;gap:6px}
+}
