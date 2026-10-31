@@ -101,3 +101,14 @@ body.ibeco-festive .home-brand:after{
     left:calc(50% + 34px)!important;top:4px!important;
   }
 }
+
+/* Mobile card tap targets: avoid long-press selection and green text highlight. */
+@media (hover:none) and (pointer:coarse){
+  .client-card,.product-open,.stock-product,.ledger-row,.stock-entry,.ibeco-history-entry,
+  .client-card *,.product-open *,.stock-product *,.ledger-row *,.stock-entry *,.ibeco-history-entry *{
+    -webkit-user-select:none;user-select:none;-webkit-touch-callout:none;
+  }
+  .client-card,.product-open,.stock-product,.ledger-row,.stock-entry,.ibeco-history-entry{
+    touch-action:pan-y;-webkit-tap-highlight-color:transparent;
+  }
+}
