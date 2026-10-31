@@ -1,13 +1,13 @@
 {
-  "version": "2026.10.31.9",
-  "displayVersion": "26.10.9",
-  "build": 2026103109,
+  "version": "2026.10.31.10",
+  "displayVersion": "26.10.10",
+  "build": 2026103110,
   "date": "31/10/2026",
   "changes": [
-    "Nuevo formato de versión corto: año, mes y revisión.",
-    "Buscar actualización ahora solo consulta: no descarga ni instala automáticamente.",
-    "La aplicación muestra las novedades y correcciones antes de instalar una versión.",
-    "Actualizar ahora instala directamente cuando tú lo decides, sin segunda confirmación.",
-    "El panel muestra únicamente la actualización disponible; no incluye historial de versiones anteriores."
+    "Nuevo diseño navideño premium inspirado en el boceto aprobado.",
+    "Logotipo original IBECO preservado, sin gorro de Navidad superpuesto.",
+    "Guirnaldas, luces cálidas, esferas, lazo y detalles decorativos integrados al encabezado.",
+    "Tarjetas de clientes y saldo por cobrar con acabados refinados, brillo verde y mejor contraste.",
+    "Curvas luminosas y decoración navideña al pie de Inicio; sin cambios a movimientos, saldos ni almacenamiento."
   ]
 }
