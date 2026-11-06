@@ -70,6 +70,14 @@ function ibecoAccountPage(kind) {
         ${rows || '<div class="empty">Todavía no hay movimientos en este historial.</div>'}
       </div>
     </section>`;
+  // Show the latest movements immediately, keeping chronological order and their running balances.
+  // Users can still swipe upward inside the ledger to review older entries.
+  const ledger = document.querySelector('#content .ibeco-history-scroll');
+  if (ledger && entries.length) {
+    requestAnimationFrame(() => {
+      if (ledger.isConnected) ledger.scrollTop = ledger.scrollHeight;
+    });
+  }
   // Highlight IBECO navigation for both dedicated ledger screens.
   $('#nav').querySelectorAll('button').forEach(b => {
     const isSupplier = b.textContent.trim().toLowerCase().includes('ibeco');
