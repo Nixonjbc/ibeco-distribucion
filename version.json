@@ -1,13 +1,12 @@
 {
-  "version": "2026.10.31.10",
-  "displayVersion": "26.10.10",
-  "build": 2026103110,
-  "date": "31/10/2026",
+  "version": "2026.11.06.1",
+  "displayVersion": "26.11.1",
+  "build": 2026110601,
+  "date": "06/11/2026",
   "changes": [
-    "Nuevo diseño navideño premium inspirado en el boceto aprobado.",
-    "Logotipo original IBECO preservado, sin gorro de Navidad superpuesto.",
-    "Guirnaldas, luces cálidas, esferas, lazo y detalles decorativos integrados al encabezado.",
-    "Tarjetas de clientes y saldo por cobrar con acabados refinados, brillo verde y mejor contraste.",
-    "Curvas luminosas y decoración navideña al pie de Inicio; sin cambios a movimientos, saldos ni almacenamiento."
+    "Al registrar un pago, entrega, recepción u otro movimiento, se abre automáticamente el comprobante de la operación guardada.",
+    "Los historiales de deuda con IBECO y dinero disponible muestran directamente los movimientos más recientes al abrirlos.",
+    "Se conserva el orden cronológico de los historiales y es posible desplazarse para consultar operaciones anteriores.",
+    "No se modifican los cálculos contables ni los registros existentes."
   ]
 }
